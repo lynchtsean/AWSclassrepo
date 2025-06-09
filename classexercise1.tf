@@ -1,10 +1,10 @@
 locals {
   favorite_restaurants = {
-    chickfila    = "keela-bucket"
-    in_n_out     = "mckibbons-bucket"
-    pandaexpress = "sesame-bucket"
-    chipotle     = "birdhouse-bucket"
-    fiveguys     = "k2-bucket"
+    keela    = "keela-bucket"
+    mckibbons     = "mckibbons-bucket"
+    sesame = "sesame-bucket"
+    bordhouse     = "birdhouse-bucket"
+    k2     = "k2-bucket"
   }
 }
 
