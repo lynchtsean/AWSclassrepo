@@ -8,14 +8,14 @@ locals {
   }
 }
 
-resource "aws_s3_bucket" "my_buckets" {
+resource "aws_s3_bucket" "top5_buckets" {
   for_each     = local.favorite_restaurants
   bucket       = each.value
   force_destroy = true
 }
 
-resource "aws_s3_bucket_public_access_block" "block_public" {
-  for_each = aws_s3_bucket.my_buckets
+resource "aws_s3_bucket_public_access_block" "block_public_access" {
+  for_each = aws_s3_bucket.top5_buckets
 
   bucket = each.value.id
 
