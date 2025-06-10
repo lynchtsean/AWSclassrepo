@@ -1,14 +1,14 @@
-resource "tls_private_key" "ec2_key" {
+resource "tls_private_key" "ec2_key1" {
   algorithm = "RSA"
   rsa_bits  = 4096
 }
 
-resource "aws_key_pair" "generated" {
+resource "aws_key_pair" "generated1" {
   key_name   = "tf-ec2-key"
   public_key = tls_private_key.ec2_key.public_key_openssh
 }
 
-resource "aws_security_group" "ssh_sg" {
+resource "aws_security_group" "ssh_sg1" {
   name        = "allow-ssh"
   description = "Allow SSH inbound traffic"
 
