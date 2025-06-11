@@ -48,7 +48,7 @@ resource "aws_lb_target_group" "target_groups" {
   name     = "${each.key}-tg"
   port     = 8080
   protocol = "HTTP"
-  vpc_id   = "vpc-xxxxxxxx"  # Replace with your actual VPC ID
+  vpc_id   = "vpc-xxxxxxxx"  
 }
 
 resource "aws_ecs_service" "services" {
