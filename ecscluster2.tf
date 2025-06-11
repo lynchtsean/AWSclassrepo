@@ -1,8 +1,3 @@
-variable "cluster_names" {
-  type    = set(string)
-  default = ["lynch-cluster", "antoine-cluster", "ovadia-cluster", "negar-cluster", "onome-cluster"]
-}
-
 resource "aws_ecs_cluster" "clusters" {
   for_each = var.cluster_names
   name     = each.key
