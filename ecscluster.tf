@@ -1,5 +1,5 @@
-resource "aws_ecs_service" "lynch_cluster" {
-  name            = "lynch-cluster"
+resource "aws_ecs_service" "lynch" {
+  name            = "lynch-service"
   cluster         = aws_ecs_cluster.lynch_cluster.id
   task_definition = aws_ecs_task_definition.lynch.arn
   desired_count   = 3
