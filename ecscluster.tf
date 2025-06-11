@@ -38,7 +38,7 @@ resource "aws_lb_target_group" "lynch_tg" {
   name     = "lynch-tg"
   port     = 8080
   protocol = "HTTP"
-  vpc_id   = "vpc-xxxxxxxx"  # Replace with your VPC ID
+  vpc_id   = "vpc-xxxxxxxx"
 }
 
 resource "aws_ecs_service" "lynch" {
