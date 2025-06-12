@@ -3,5 +3,8 @@ output "cluster_ids" {
 }
 
 output "service_arns" {
-  value = { for k, s in aws_ecs_service.services : k => s.arn }
+  value = tomap({
+    for name, svc in aws_ecs_service.services :
+    name => lookup(svc, "arn", "no-arn-found")
+  })
 }
